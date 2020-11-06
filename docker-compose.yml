@@ -1,0 +1,15 @@
+version: '3.5'
+services:
+  vault:
+    image: mwaeckerlin/vault
+    build: .
+    ports:
+      - 8200:8200
+    volumes:
+      - type: volume
+        source: vault
+        target: /vault
+    cap_add:
+      - IPC_LOCK
+volumes:
+  vault:
